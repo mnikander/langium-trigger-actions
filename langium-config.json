@@ -1,0 +1,12 @@
+{
+    "projectName": "TriggerActions",
+    "languages": [{
+        "id": "trigger-actions",
+        "grammar": "src/language/trigger-actions.langium",
+        "fileExtensions": [".triact"],
+        "textMate": {
+            "out": "syntaxes/trigger-actions.tmLanguage.json"
+        }
+    }],
+    "out": "src/language/generated"
+}
