@@ -7,7 +7,10 @@ Trigger:
     'trigger' name=ID;
 
 Command:
-    'does_nothing' | 'displays' text=STRING;
+    'does_nothing' | Display;
+
+Display:
+    'displays' text=STRING;
 
 Action:
     trigger=[Trigger:ID] command=Command;
