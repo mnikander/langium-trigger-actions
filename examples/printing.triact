@@ -1,5 +1,8 @@
+trigger Empty
+Empty does nothing
+
 trigger Click_Me
-Click_Me does "print 'The button was clicked'"
+Click_Me does print 'The button was clicked'
 
 trigger Or_Me
-Or_Me does "print 'The other button was clicked'"
+Or_Me does print 'The other button was clicked'
