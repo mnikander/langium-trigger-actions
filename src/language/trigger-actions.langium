@@ -7,10 +7,10 @@ Trigger:
     'trigger' name=ID;
 
 Command:
-    'nothing' | 'print' text=STRING;
+    'does_nothing' | 'displays' text=STRING;
 
 Action:
-    trigger=[Trigger:ID] 'does' command=Command;
+    trigger=[Trigger:ID] command=Command;
 
 hidden terminal WS: /\s+/;
 terminal ID: /[_a-zA-Z][\w_]*/;
