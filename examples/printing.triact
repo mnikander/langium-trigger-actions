@@ -6,3 +6,4 @@ Click_Me displays 'The button was clicked'
 
 trigger Or_Me
 Or_Me displays 'The other button was clicked'
+Or_Me displays '... and it outputs twice'
