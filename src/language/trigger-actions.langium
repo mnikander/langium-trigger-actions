@@ -10,7 +10,7 @@ Command:
     'does_nothing' | Display;
 
 Display:
-    'displays' text=STRING;
+    'displays' value=STRING;
 
 Action:
     trigger=[Trigger:ID] command=Command;
