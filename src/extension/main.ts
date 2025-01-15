@@ -29,6 +29,39 @@ function getWebviewContent() {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Counting</title>
+
+            <script>
+
+                function createButton(label, payload) {
+                    const button = document.createElement('button');
+                    button.textContent = label;
+                    document.body.appendChild(button);
+
+                    const linebreak = document.createElement('br');
+                    document.body.append(linebreak);
+
+                    button.addEventListener('click', () => {
+                        const printout = document.getElementById('printout');
+                        printout.textContent = payload;
+                    });
+                }
+
+                function createAllButtons() {
+                    const txt = '[ \
+                                    {"label"  : "Click me", \
+                                    "message": "The button was clicked"}, \
+                                    {"label"  : "Or Me", \
+                                    "message": "The other button was clicked"} \
+                                ]';
+                    const buttons = JSON.parse(txt);
+
+                    for (let b of buttons) {
+                        createButton(b["label"], b["message"]);
+                    }
+                }
+
+                window.onload = createAllButtons; // run the function after the page loads
+            </script>
         </head>
         <body>
             <h1>Counter on a Webpage</h1>
@@ -44,6 +77,7 @@ function getWebviewContent() {
                 }, 1000);
 
             </script>
+            <p id="printout"> </p>
         </body>
         </html>
 `;
