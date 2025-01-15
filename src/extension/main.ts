@@ -14,7 +14,9 @@ export function activate(context: vscode.ExtensionContext): void {
         'triggerAction', // Identifies the type of the webview. Used internally
         'Trigger Actions', // Title of the panel displayed to the user
         vscode.ViewColumn.One,
-        {}
+        {
+            enableScripts: true
+        }
     );
 
     panel.webview.html = getWebviewContent();
@@ -26,12 +28,25 @@ function getWebviewContent() {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cat Coding</title>
+            <title>Counting</title>
         </head>
         <body>
-            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+            <h1>Counter on a Webpage</h1>
+            <h1 id="accumulator">0</h1>
+            <p>This page increments a counter.</p>
+            <script>
+
+                const counter = document.getElementById('accumulator');
+
+                let count = 0;
+                setInterval(() => {
+                    counter.textContent = count++;
+                }, 1000);
+
+            </script>
         </body>
-        </html>`;
+        </html>
+`;
 }
 
 // This function is called when the extension is deactivated.
